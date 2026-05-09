@@ -65,13 +65,8 @@
       </a>
       <div class="nav-right">
         <a class="nav-link active" href="index.html" aria-current="page">Home</a>
-        <a class="nav-link" href="background.html">Background</a>
-        <a class="nav-link" href="research.html">Research</a>
-        <a class="nav-link" href="projects.html">Projects</a>
-        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="background.html">About</a>
         <a class="nav-link" href="blog.html">Blog</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
         <div class="more-menu" id="moreMenu">
           <button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="countryMenu">
             More
@@ -83,7 +78,7 @@
             <div class="drop-group mobile-main-links">
               <p class="drop-group-title">Main links</p>
               <a class="drop-item active" href="index.html" aria-current="page">Home</a>
-              <a class="drop-item" href="background.html">Background</a>
+              <a class="drop-item" href="background.html">About</a>
               <a class="drop-item" href="research.html">Research</a>
               <a class="drop-item" href="projects.html">Projects</a>
               <a class="drop-item" href="publications.html">Publications</a>
@@ -91,7 +86,10 @@
               <a class="drop-item" href="contact.html">Contact</a>
             </div>
             <div class="drop-group">
-              <p class="drop-group-title">International Profile</p>
+              <p class="drop-group-title">More links</p>
+              <a class="drop-item desktop-drop-link" href="research.html">Research</a>
+              <a class="drop-item desktop-drop-link" href="projects.html">Projects</a>
+              <a class="drop-item desktop-drop-link" href="publications.html">Publications</a>
               <a class="drop-item" href="china.html"><span class="flag" aria-hidden="true">🇨🇳</span> China</a>
               <a class="drop-item" href="uk.html"><span class="flag" aria-hidden="true">🇬🇧</span> UK</a>
               <a class="drop-item" href="france.html"><span class="flag" aria-hidden="true">🇫🇷</span> France</a>
@@ -102,31 +100,61 @@
             </div>
           </div>
         </div>
+        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </div>
     </nav>
 
     <header class="hero home-hero">
-      <img class="hero-logo" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo">
+      <div class="hero-identity">
+        <div class="profile-orbit" aria-label="Sifaks Ousmail">
+          <img class="hero-profile-photo" src="assets/profile/sifaks.ousmail.jpeg" width="768" height="1024" alt="Portrait of Sifaks Ousmail" data-i18n-attr="alt:home.profileAlt" decoding="async" fetchpriority="high">
+          <span class="hero-profile-badge" aria-hidden="true">
+            <img data-no-translate src="/favicon.svg" alt="">
+          </span>
+        </div>
+      </div>
       <h1 data-no-translate>Sifaks<br>Ousmail</h1>
       <div class="pill"><span class="pill-dot"></span>Official Website</div>
       <div class="hero-copy">
-        <p class="lead">Sifaks Ousmail is a linguist and researcher working across language policy, language education, applied linguistics, and French linguistics, with academic training spanning Paris, Cambridge, and Shanghai.</p>
-        <p class="hero-note">This site is a growing space for language and linguistics lovers, connecting research, multilingual education, and practical pathways for Chinese, English, and French language learning.</p>
+        <p class="lead" data-i18n="home.lead">Researcher in SLA and AI-assisted language education.</p>
       </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:hello@sifaks.com">Contact</a>
-        <a class="btn btn-secondary" href="background.html">View background</a>
-      </div>
+      <a class="hero-scroll-cue" href="#software-preview" aria-label="Scroll to software preview" data-i18n-attr="aria-label:home.letsGoAria">
+        <span data-i18n="home.letsGo">Let’s go</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+      </a>
     </header>
 
     <main>
-      <section class="section home-profile">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Academic Profile</p>
-            <h2>Academic Work &amp; International Profile</h2>
+      <section class="section home-profile" id="software-preview">
+        <a class="software-tools-link featured-project-card glass" href="software.html">
+          <span class="card-kicker">Software preview</span>
+          <span class="software-tools-body">
+            <span class="software-tools-title">AI Language Software — Dev Preview</span>
+            <span class="software-tools-copy">Experimental software by Sifaks Ousmail for AI-assisted pronunciation feedback, currently focused on Chinese learners of French.</span>
+          </span>
+          <span class="inline-link">Open software preview →</span>
+        </a>
+        <div class="focus-band glass" aria-label="Research focus">
+          <p>Research Focus</p>
+          <div class="focus-tags">
+            <span>Applied Linguistics</span>
+            <span>Language Education</span>
+            <span>Second Language Acquisition</span>
+            <span>AI-assisted Language Learning</span>
+            <span>Chinese Language Learning</span>
           </div>
-          <p class="section-note">Sifaks Ousmail works across applied linguistics, language education, second language acquisition, Cambridge and Shanghai academic contexts, and Chinese/French language learning.</p>
+        </div>
+        <div class="continue-scroll-wrap">
+          <a class="continue-scroll-cue" href="#academic-profile" aria-label="Continue to academic profile" data-i18n-attr="aria-label:home.continueExploreAria">
+            <span data-i18n="home.continueExplore">Continue exploring</span>
+            <span class="scroll-arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <div class="section-head" id="academic-profile">
+          <div>
+            <h2>Academic Profile</h2>
+          </div>
         </div>
         <div class="profile-card-grid overview-grid">
           <article class="country-card glass">
@@ -138,48 +166,29 @@
           <article class="country-card glass">
             <span class="card-kicker">Academic path</span>
             <p class="edu-degree">International Academic Profile</p>
-            <p>An international academic path connecting France, the United Kingdom, and China through French language learning, Chinese language learning, Cambridge, and Shanghai International Studies University.</p>
+            <p>An international academic path connecting France, the United Kingdom, and China through French language learning, Chinese language learning, Cambridge, and Shanghai.</p>
             <a class="inline-link" href="background.html">Learn more →</a>
           </article>
           <article class="country-card glass">
             <span class="card-kicker">Ongoing work</span>
             <p class="edu-degree">Projects &amp; Publications</p>
-            <p>Publications, working papers, conference outputs, and ongoing project work connected to multilingual education, FLE, pronunciation learning, and metacognition.</p>
+            <p>Incoming project work connected to multilingual education, FLE, pronunciation learning, and more.</p>
             <a class="inline-link" href="projects.html">Learn more →</a>
           </article>
           <article class="country-card glass">
             <span class="card-kicker">Notes</span>
             <p class="edu-degree">Blog &amp; Reflections</p>
-            <p>A reflection space for language learning, linguistics, AI-assisted learning, French grammar, Chinese learning, and ideas emerging from academic work.</p>
+            <p>A reflection space for language learning and ideas emerging from academic work. Dev notes are also posted here.</p>
             <a class="inline-link" href="blog.html">Learn more →</a>
           </article>
         </div>
-        <div class="focus-band glass" aria-label="Research focus">
-          <p>Research Focus</p>
-          <div class="focus-tags">
-            <span>Applied Linguistics</span>
-            <span>Language Education</span>
-            <span>Second Language Acquisition</span>
-            <span>AI-assisted Language Learning</span>
-            <span>French Linguistics</span>
-            <span>Chinese Language Learning</span>
-          </div>
-        </div>
-        <a class="software-tools-link featured-project-card glass" href="software.html">
-          <span class="card-kicker">Software preview</span>
-          <span class="software-tools-body">
-            <span class="software-tools-title">AI Language Tools — Preview in development</span>
-            <span class="software-tools-copy">Experimental tools by Sifaks Ousmail for AI-assisted pronunciation feedback, multilingual language education, applied linguistics, and French/Chinese language learning.</span>
-          </span>
-          <span class="inline-link">Open software preview →</span>
-        </a>
       </section>
-      <div class="external-link-panel glass seo-links">
+      <div class="external-link-panel glass seo-links" id="external-profiles">
         <p>External Academic Profiles</p>
         <div class="learning-actions">
-          <a class="featured-profile" href="https://www.languagesciences.cam.ac.uk/staff/sifaks-ousmail" target="_blank" rel="noopener noreferrer">Cambridge Language Sciences</a>
-          <a href="https://www.researchgate.net/profile/Sifaks-Ousmail" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+          <a href="https://www.languagesciences.cam.ac.uk/staff/sifaks-ousmail" target="_blank" rel="noopener noreferrer">Cambridge Language Sciences</a>
           <a href="https://www.facebook.com/CLECPeople/posts/in-2019-sifaks-ousmail-a-french-learner-of-the-chinese-language-embarked-on-his-/1245296061081869/" target="_blank" rel="noopener noreferrer">CLEC People</a>
+          <a href="https://www.researchgate.net/profile/Sifaks-Ousmail" target="_blank" rel="noopener noreferrer">ResearchGate</a>
         </div>
       </div>
       <section class="github-profile-card glass" aria-labelledby="github-profile-title">
@@ -191,7 +200,7 @@
         <div class="github-profile-body">
           <span class="card-kicker" data-i18n="home.githubKicker">Code profile</span>
           <h2 id="github-profile-title" data-i18n="home.githubTitle">GitHub</h2>
-          <p data-i18n="home.githubText">Explore Sifaks Ousmail’s GitHub profile for projects, code, and ongoing work in language technology, software, and digital development.</p>
+          <p data-i18n="home.githubText">Sifaks Ousmail’s GitHub profile for projects, code, and ongoing work in language technology, software, digital development, and earlier gaming-related projects.</p>
         </div>
         <a class="github-card-link" href="https://github.com/sifaksousmail" target="_blank" rel="noopener noreferrer" data-i18n="home.githubLink" data-i18n-attr="aria-label:home.githubAria" aria-label="Visit Sifaks Ousmail GitHub profile">Visit GitHub profile →</a>
       </section>

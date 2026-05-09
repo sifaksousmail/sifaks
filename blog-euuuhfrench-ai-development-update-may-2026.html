@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1220">
-  <meta name="description" content="May 2026 development update on EuuuhFrench AI by Sifaks Ousmail, an in-development AI-assisted French pronunciation tool for Chinese-speaking learners of French.">
-  <meta property="og:title" content="EuuuhFrench AI Development Update — May 2026">
-  <meta property="og:description" content="A public SIFAKS © Software update on the EuuuhFrench AI prototype, AI-assisted French pronunciation, mouth-shape video guidance, and support for Chinese learners of French.">
+  <meta name="description" content="May 2026 v1.0 development update on EuuuhFrench AI by Sifaks Ousmail, a first working MVP for AI-assisted French pronunciation learning for Chinese-speaking learners of French.">
+  <meta property="og:title" content="EuuuhFrench AI v1.0 DevUpdate">
+  <meta property="og:description" content="A public SIFAKS Software update on the EuuuhFrench AI v1.0 MVP, API-backed pronunciation assessment, mouth-shape video guidance, and support for Chinese learners of French.">
   <meta property="og:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-home-preview.jpg">
   <meta property="og:type" content="article">
   <meta property="article:published_time" content="2026-05-09T03:56:00+08:00">
   <meta property="og:url" content="https://sifaks.com/blog-euuuhfrench-ai-development-update-may-2026.html">
   <meta property="og:site_name" content="Sifaks Ousmail">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EuuuhFrench AI Development Update — May 2026">
-  <meta name="twitter:description" content="May 2026 update on EuuuhFrench AI, an in-development AI-assisted French pronunciation prototype for Chinese-speaking learners of French.">
+  <meta name="twitter:title" content="EuuuhFrench AI v1.0 DevUpdate">
+  <meta name="twitter:description" content="May 2026 update on EuuuhFrench AI v1.0, a first working MVP for AI-assisted French pronunciation practice for Chinese-speaking learners of French.">
   <meta name="twitter:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-home-preview.jpg">
-  <title>EuuuhFrench AI Development Update — May 2026 | Sifaks Ousmail</title>
+  <title>EuuuhFrench AI v1.0 DevUpdate | Sifaks Ousmail</title>
   <link rel="canonical" href="https://sifaks.com/blog-euuuhfrench-ai-development-update-may-2026.html">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,13 +34,8 @@
       </a>
       <div class="nav-right">
         <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="background.html">Background</a>
-        <a class="nav-link" href="research.html">Research</a>
-        <a class="nav-link" href="projects.html">Projects</a>
-        <a class="nav-link" href="publications.html">Publications</a>
-        <a class="nav-link active" href="blog.html">Blog</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
+        <a class="nav-link" href="background.html">About</a>
+        <a class="nav-link active" href="blog.html" aria-current="page">Blog</a>
         <div class="more-menu" id="moreMenu">
           <button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="countryMenu">
             More
@@ -52,15 +47,18 @@
             <div class="drop-group mobile-main-links">
               <p class="drop-group-title">Main links</p>
               <a class="drop-item" href="index.html">Home</a>
-              <a class="drop-item" href="background.html">Background</a>
+              <a class="drop-item" href="background.html">About</a>
               <a class="drop-item" href="research.html">Research</a>
               <a class="drop-item" href="projects.html">Projects</a>
               <a class="drop-item" href="publications.html">Publications</a>
-              <a class="drop-item active" href="blog.html">Blog</a>
+              <a class="drop-item active" href="blog.html" aria-current="page">Blog</a>
               <a class="drop-item" href="contact.html">Contact</a>
             </div>
             <div class="drop-group">
-              <p class="drop-group-title">International Profile</p>
+              <p class="drop-group-title">More links</p>
+              <a class="drop-item desktop-drop-link" href="research.html">Research</a>
+              <a class="drop-item desktop-drop-link" href="projects.html">Projects</a>
+              <a class="drop-item desktop-drop-link" href="publications.html">Publications</a>
               <a class="drop-item" href="china.html"><span class="flag" aria-hidden="true">🇨🇳</span> China</a>
               <a class="drop-item" href="uk.html"><span class="flag" aria-hidden="true">🇬🇧</span> UK</a>
               <a class="drop-item" href="france.html"><span class="flag" aria-hidden="true">🇫🇷</span> France</a>
@@ -71,6 +69,8 @@
             </div>
           </div>
         </div>
+        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </div>
     </nav>
 
@@ -78,46 +78,44 @@
       <article class="blog-post">
         <header class="hero blog-post-hero">
           <img class="hero-logo" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo">
-          <p class="kicker">SIFAKS © Software</p>
-          <h1>EuuuhFrench AI Development Update — May 2026</h1>
+          <p class="kicker">SIFAKS Software</p>
+          <h1>EuuuhFrench AI v1.0 DevUpdate</h1>
           <p class="post-meta">Published: May 9, 2026</p>
-          <p class="lead">A short update on the EuuuhFrench AI prototype, AI-assisted French pronunciation, and support for Chinese-speaking learners of French.</p>
+          <p class="lead">A short update on the first MVP version of EuuuhFrench AI, an AI-assisted French pronunciation tool for Chinese-speaking learners of French.</p>
         </header>
 
         <section class="section blog-article-section">
           <div class="blog-article-body glass">
-            <p><strong>EuuuhFrench AI is an in-development AI-assisted French pronunciation tool.</strong> It is conceived, designed, and developed by Sifaks Ousmail for Chinese-speaking learners of French.</p>
+            <p>A short update on the first MVP version of EuuuhFrench AI, an AI-assisted French pronunciation tool for Chinese-speaking learners of French.</p>
 
-            <p>The project is part of <a href="software.html">SIFAKS © Software</a>. It connects applied linguistics, language education, second language acquisition, and French as a foreign language.</p>
+            <p>EuuuhFrench AI is conceived, designed, and developed by Sifaks Ousmail. The project is part of <a href="software.html">SIFAKS Software</a> and connects applied linguistics, second language acquisition, language education, and French as a foreign language.</p>
 
-            <p>The current version is close to an MVP. The main learning flow now works: learners can listen to native French audio, record their own pronunciation, replay their attempt, receive AI-assisted feedback, read correction guidance, and try again. The interface also works across English, French, and Simplified Chinese, with desktop and mobile layouts checked.</p>
+            <p>Version 1.0 is now live at <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> as a focused MVP. Learners can listen to native French audio, record their own pronunciation, replay their attempt, receive AI-assisted feedback, read correction guidance, and try again. The interface is available in English, French, and Simplified Chinese, with desktop and mobile layouts checked.</p>
 
             <figure class="post-article-image">
               <img src="assets/blog/euuuhfrench-ai-home-preview.jpg" width="1280" height="875" alt="EuuuhFrench AI landing interface for Chinese-speaking learners of French.">
             </figure>
 
-            <h2>What changed in this update?</h2>
-            <p>Recent work focused on simplifying the practice flow. Learners now follow a clearer step-by-step sequence for each word or sentence. The goal is to make the app easier to use, especially during repeated pronunciation attempts.</p>
+            <h2>What changed in v1.0?</h2>
+            <p>The main focus was on making the practice flow more clearly and easily to follow. Learners now move through a simple sequence for each word or sentence: listen, record, receive feedback, retry or skip, then continue to the next item.</p>
 
-            <p>This update also added local mouth-shape video guidance for five French sounds: /y/, /ø/, /œ/, /ʁ/, and /ɛ̃/. These sounds are especially relevant for Chinese-speaking learners of French because they involve features such as lip rounding, vowel placement, nasal resonance, and uvular articulation.</p>
+            <p>Version 1.0 also includes local mouth-shape video guidance for five French sounds: /y/, /ø/, /œ/, /ʁ/, and /ɛ̃/. These sounds are especially relevant for Chinese-speaking learners of French because they involve lip rounding, vowel placement, nasal resonance, and uvular articulation. Video guidance is only available in Chinese for now.</p>
 
             <figure class="post-article-image">
               <img src="assets/blog/euuuhfrench-ai-mouth-shape-preview.jpg" width="1280" height="833" loading="lazy" alt="EuuuhFrench AI mouth-shape video guidance for French pronunciation practice.">
             </figure>
 
-            <p>The app now combines native French audio examples, learner recording replay, mouth-shape guidance, correction prompts, and API-backed pronunciation assessment. Feedback wording has also been refined so that unclear recordings receive more useful guidance rather than misleading scores.</p>
+            <p>The app now combines native French audio examples, learner recording replay, mouth-shape guidance, correction prompts, and API-backed pronunciation assessment. Feedback wording has also been refined so that unclear recordings receive useful guidance rather than misleading scores.</p>
 
-            <p>The assessment layer has been improved around Speechace-related target detection and feedback reliability. This remains AI-assisted pronunciation feedback, not a claim of a proprietary AI model, and not a replacement for teaching.</p>
+            <p>The assessment layer has been improved in terms of target detection and feedback reliability. This remains AI-assisted pronunciation feedback, not a claim of a proprietary AI model, and not a replacement for teaching.</p>
 
             <h2>Prototype status</h2>
-            <p>EuuuhFrench AI is still an in-development prototype, not a fully launched commercial product. Recent updates focus on making the learning experience more concrete: video feedback, native French audio comparison, recording, replay, correction guidance, and clearer retry support.</p>
+            <p>EuuuhFrench AI v1.0 is the first working MVP. It is still an early version, but the core learning flow is now usable: native audio, recording, replay, pronunciation feedback, retry support, and video guidance for difficult sounds.</p>
 
-            <p>The multilingual branding and interface have also been polished in English, French, and Simplified Chinese, including the EuuuhAI / 优法音 presentation used across the public software preview.</p>
-
-            <p>For now, the project can be seen as a bridge between applied linguistics research and language education design: a focused pronunciation tool for Chinese-speaking learners of French, built around concrete French pronunciation learning problems.</p>
+            <p>As of now, this project serves as a bridge between applied linguistics research and practical language education design: a focused pronunciation software for Chinese-speaking learners of French. Built around concrete French pronunciation learning problems.</p>
 
             <div class="post-link-panel">
-              <a class="btn btn-primary" href="software.html">View SIFAKS © Software</a>
+              <a class="btn btn-primary" href="software.html">View SIFAKS Software</a>
               <a class="btn btn-secondary" href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">Open app preview</a>
             </div>
           </div>
