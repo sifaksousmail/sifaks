@@ -118,7 +118,7 @@ const translationEntries = [
   ['home.letsGo', 'Let’s go', 'C’est parti', '开始'],
   ['home.letsGoAria', 'Scroll to software preview', 'Faire défiler vers l’aperçu logiciel', '滚动到软件预览'],
   ['home.continueExplore', 'Continue exploring', 'Continuer l’exploration', '继续浏览'],
-  ['home.continueExploreAria', 'Continue to academic profile', 'Continuer vers le profil académique', '继续到学术简介'],
+  ['home.continueExploreAria', 'Continue to external academic profiles', 'Continuer vers les profils académiques externes', '继续到外部学术主页'],
   ['home.overviewTitle', 'Academic Profile', 'Profil académique', '学术简介'],
   ['home.cardResearchKicker', 'Core interests', 'Intérêts principaux', '核心兴趣'],
   ['home.researchCardTitle', 'Research Areas', 'Axes de recherche', '研究领域'],
@@ -180,20 +180,19 @@ const translationEntries = [
   ['background.blogLink', 'See my blog >>>', 'Voir mon blog >>>', '查看我的博客 >>>'],
   ['research.title', 'Research', 'Recherche', '研究'],
   ['research.pill', 'Research Focus', 'Axes de recherche', '研究重点'],
-  ['research.lead', 'Broad academic research areas and interests connecting applied linguistics, language education, second language acquisition, and AI-assisted language learning.', 'Grands domaines et intérêts de recherche reliant linguistique appliquée, éducation aux langues, acquisition des langues secondes et apprentissage assisté par l’IA.', '广泛的学术研究方向，连接应用语言学、语言教育、第二语言习得和人工智能辅助语言学习。'],
+  ['research.lead', 'Applied linguistics, language education, second language acquisition, and AI-assisted language learning.', 'Linguistique appliquée, éducation aux langues, acquisition des langues secondes et apprentissage des langues assisté par l’IA.', '应用语言学、语言教育、第二语言习得和 AI 辅助语言学习。'],
   ['research.areas', 'Research Areas', 'Axes de recherche', '研究领域'],
   ['research.core', 'Core Interests', 'Intérêts principaux', '核心兴趣'],
-  ['research.note', 'Research themes connecting language learning, education, policy, and technology.', 'Thèmes de recherche reliant apprentissage des langues, éducation, politique et technologie.', '连接语言学习、教育、政策和技术的研究主题。'],
   ['research.sla', 'Second Language Acquisition', 'Acquisition des langues secondes', '第二语言习得'],
   ['research.slaDesc', 'Research interests include how learners develop grammar, pronunciation, and metalinguistic awareness across different stages of second language learning.', 'Mes intérêts portent notamment sur le développement de la grammaire, de la prononciation et de la conscience métalinguistique à différentes étapes de l’apprentissage.', '研究兴趣包括学习者在第二语言学习不同阶段如何发展语法、发音和元语言意识。'],
   ['research.applied', 'Applied Linguistics', 'Linguistique appliquée', '应用语言学'],
   ['research.appliedDesc', 'Applied linguistics provides the main framework for connecting language theory with teaching, learning, assessment, and multilingual communication.', 'La linguistique appliquée fournit le cadre principal pour relier théorie du langage, enseignement, apprentissage, évaluation et communication multilingue.', '应用语言学为连接语言理论、教学、学习、评估和多语交流提供主要框架。'],
   ['research.ai', 'AI-assisted Language Learning', 'Apprentissage des langues assisté par l’IA', '人工智能辅助语言学习'],
-  ['research.aiDesc', 'This area explores how AI tools can support feedback, pronunciation practice, learner autonomy, and research-informed language education.', 'Cet axe explore comment les outils d’IA peuvent soutenir le feedback, la pratique de la prononciation, l’autonomie des apprenants et une éducation aux langues fondée sur la recherche.', '这一领域探讨 AI 工具如何支持反馈、发音练习、学习者自主性以及基于研究的语言教育。'],
+  ['research.aiDesc', 'How artificial intelligence can support feedback, pronunciation, and learner autonomy in language education.', 'Comment l’intelligence artificielle peut soutenir le feedback, la prononciation et l’autonomie des apprenants en éducation aux langues.', '人工智能如何在语言教育中支持反馈、发音和学习者自主性。'],
   ['research.fle', 'French as a Foreign Language / FLE', 'Français langue étrangère / FLE', '对外法语 / FLE'],
   ['research.fleDesc', 'FLE research focuses on French language learning, grammar acquisition, learner difficulties, and pedagogical approaches for French as an additional language.', 'La recherche en FLE porte sur l’apprentissage du français, l’acquisition grammaticale, les difficultés des apprenants et les approches pédagogiques du français langue additionnelle.', '对外法语研究关注法语学习、语法习得、学习困难以及作为附加语言的法语教学方法。'],
   ['research.policy', 'Language Policy and Language Education', 'Politique linguistique et éducation aux langues', '语言政策与语言教育'],
-  ['research.policyDesc', 'Work in this area considers how language policy shapes educational practice, multilingual learning environments, and access to language education.', 'Ce travail examine comment la politique linguistique façonne les pratiques éducatives, les environnements multilingues et l’accès à l’éducation aux langues.', '该方向关注语言政策如何塑造教育实践、多语学习环境以及语言教育机会。'],
+  ['research.policyDesc', 'How language policy shapes educational practice, multilingual learning environments, and access to language education.', 'Comment la politique linguistique façonne les pratiques éducatives, les environnements multilingues et l’accès à l’éducation aux langues.', '语言政策如何塑造教育实践、多语学习环境以及语言教育机会。'],
   ['projects.title', 'Projects', 'Projets', '项目'],
   ['projects.pill', 'My Projects', 'Mes projets', '我的项目'],
   ['projects.lead', 'Concrete project work and ongoing initiatives connected to research, teaching, and multilingual language education.', 'Travaux de projet concrets et initiatives en cours liés à la recherche, à l’enseignement et à l’éducation multilingue.', '与研究、教学和多语教育相关的具体项目与持续行动。'],
@@ -207,7 +206,7 @@ const translationEntries = [
   ['projects.multilingual', 'Multilingual Language Education', 'Éducation multilingue', '多语语言教育'],
   ['projects.multilingualDesc', 'Work connecting French, English, and Chinese language learning with broader questions in language education and applied linguistics.', 'Travail reliant l’apprentissage du français, de l’anglais et du chinois à des questions plus larges en éducation aux langues et linguistique appliquée.', '将法语、英语和中文学习与语言教育和应用语言学中的更广泛问题联系起来。'],
   ['projects.software', 'SIFAKS © Software', 'SIFAKS © Software', 'SIFAKS © Software'],
-  ['projects.softwareDesc', 'A short preview of EuuuhAI for French, an in-development AI-assisted French pronunciation training tool for Chinese native speakers, connected to applied linguistics and language education.', 'Un court aperçu d’EuuuhAI for French, un outil d’entraînement à la prononciation française assisté par l’IA pour les apprenants sinophones, relié à la linguistique appliquée et à l’éducation aux langues.', '优法音 AI（EuuuhAI for French）的简短预览：针对中文母语者的AI辅助法语发音训练工具，并与应用语言学和语言教育相关。'],
+  ['projects.softwareDesc', 'A short preview of EuuuhAI for French, an in-development AI-assisted French pronunciation training tool for Chinese native speakers.', 'Un court aperçu d’EuuuhAI for French, un outil d’entraînement à la prononciation française assisté par l’IA pour les apprenants sinophones.', '优法音 AI（EuuuhAI for French）的简短预览：面向中文母语者的 AI 辅助法语发音训练工具。'],
   ['projects.softwareLink', 'Open software preview →', 'Ouvrir l’aperçu logiciel →', '打开软件预览 →'],
   ['software.title', 'SIFAKS © Software', 'SIFAKS © Software', 'SIFAKS © Software'],
   ['software.status', 'Prototype preview · In development', 'Aperçu de prototype · En développement', '原型预览 · 开发中'],
@@ -278,6 +277,12 @@ const translationEntries = [
   ['blog.title', 'Blog', 'Blog', '博客'],
   ['blog.pill', 'My Thoughts', 'Mes réflexions', '我的思考'],
   ['blog.lead', 'A space for reflections on languages, linguistics, learning, culture, education, and the small ideas that grow through reading, teaching, traveling, and research.', 'Un espace de réflexion sur les langues, la linguistique, l’apprentissage, la culture, l’éducation et les petites idées qui naissent de la lecture, de l’enseignement, du voyage et de la recherche.', '一个关于语言、语言学、学习、文化、教育以及在阅读、教学、旅行和研究中逐渐形成的小想法的反思空间。'],
+  ['blog.latestPost', 'Latest Post', 'Dernier article', '最新文章'],
+  ['blog.developmentUpdate', 'Development update', 'Mise à jour du développement', '开发更新'],
+  ['blog.featureDate', 'May 9, 2026', '9 mai 2026', '2026年5月9日'],
+  ['blog.featureTitle', 'EuuuhFrench AI v1.0 Development Update', 'EuuuhFrench AI v1.0 : mise à jour du développement', 'EuuuhFrench AI v1.0 开发更新'],
+  ['blog.featureDesc', 'EuuuhFrench AI v1.0 is the first working MVP, with native French audio, learner recording, replay, AI-assisted feedback, retry support, and mouth-shape video guidance.', 'EuuuhFrench AI v1.0 est le premier MVP fonctionnel, avec audio français natif, enregistrement de l’apprenant, réécoute, feedback assisté par l’IA, aide à la reprise et guidage vidéo de la forme de la bouche.', 'EuuuhFrench AI v1.0 是第一个可用的 MVP，包含法语母语音频、学习者录音、回放、AI 辅助反馈、重试支持和口型视频指导。'],
+  ['blog.featureLink', 'Read development update →', 'Lire la mise à jour →', '阅读开发更新 →'],
   ['blog.planned', 'Planned Notes', 'Notes prévues', '计划笔记'],
   ['blog.notes', 'Language notes', 'Notes linguistiques', '语言笔记'],
   ['blog.note', 'A future reflection space for language learning discussions and research ideas.', 'Un futur espace de réflexion pour les discussions sur l’apprentissage des langues et les idées de recherche.', '未来用于语言学习讨论和研究想法的反思空间。'],
@@ -287,6 +292,25 @@ const translationEntries = [
   ['blog.aiPronunciationDesc', 'A planned note on AI-assisted language learning, pronunciation feedback, and the limits of automated support.', 'Une note prévue sur l’apprentissage des langues assisté par l’IA, le feedback de prononciation et les limites du soutien automatisé.', '一篇计划中的笔记，关于 AI 辅助语言学习、发音反馈以及自动化支持的局限。'],
   ['blog.metacognition', 'Metacognition in Second Language Acquisition', 'Métacognition dans l’acquisition des langues secondes', '第二语言习得中的元认知'],
   ['blog.metacognitionDesc', 'A planned post on learner awareness, strategy use, and how metacognition can shape second language acquisition.', 'Un billet prévu sur la conscience des apprenants, l’usage des stratégies et la manière dont la métacognition peut façonner l’acquisition des langues secondes.', '一篇计划中的文章，关于学习者意识、策略使用以及元认知如何影响第二语言习得。'],
+  ['blogPost.kicker', 'SIFAKS Software', 'SIFAKS Software', 'SIFAKS Software'],
+  ['blogPost.title', 'EuuuhFrench AI v1.0 DevUpdate', 'EuuuhFrench AI v1.0 : mise à jour dev', 'EuuuhFrench AI v1.0 开发更新'],
+  ['blogPost.date', 'Published: May 9, 2026', 'Publié : 9 mai 2026', '发布：2026年5月9日'],
+  ['blogPost.lead', 'A short update on the first MVP version of EuuuhFrench AI, an AI-assisted French pronunciation tool for Chinese-speaking learners of French.', 'Une courte mise à jour sur la première version MVP d’EuuuhFrench AI, un outil de prononciation française assisté par l’IA pour les apprenants sinophones du français.', '关于 EuuuhFrench AI 首个 MVP 版本的简短更新：这是面向中文母语法语学习者的 AI 辅助法语发音工具。'],
+  ['blogPost.origin', 'EuuuhFrench AI is conceived, designed, and developed by Sifaks Ousmail. The project is part of <a href="software.html">SIFAKS Software</a> and connects applied linguistics, second language acquisition, language education, and French as a foreign language.', 'EuuuhFrench AI est imaginé, conçu et développé par Sifaks Ousmail. Le projet fait partie de <a href="software.html">SIFAKS Software</a> et relie la linguistique appliquée, l’acquisition des langues secondes, l’éducation aux langues et le français langue étrangère.', 'EuuuhFrench AI 由 Sifaks Ousmail 构思、设计并开发。该项目属于 <a href="software.html">SIFAKS Software</a>，连接应用语言学、第二语言习得、语言教育和对外法语。'],
+  ['blogPost.live', 'Version 1.0 is now live at <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> as a focused MVP. Learners can listen to native French audio, record their own pronunciation, replay their attempt, receive AI-assisted feedback, read correction guidance, and try again. The interface is available in English, French, and Simplified Chinese, with desktop and mobile layouts checked.', 'La version 1.0 est maintenant en ligne sur <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> comme MVP ciblé. Les apprenants peuvent écouter un audio français natif, enregistrer leur prononciation, réécouter leur essai, recevoir un feedback assisté par l’IA, lire des conseils de correction et recommencer. L’interface est disponible en anglais, français et chinois simplifié, avec des mises en page vérifiées sur ordinateur et mobile.', '1.0 版本现已在 <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> 上线，作为一个聚焦发音练习的 MVP。学习者可以听法语母语音频、录制自己的发音、回放尝试、获得 AI 辅助反馈、阅读纠正建议并再次练习。界面支持英语、法语和简体中文，并已检查桌面端和移动端布局。'],
+  ['blogPost.homeAlt', 'EuuuhFrench AI landing interface for Chinese-speaking learners of French.', 'Interface d’accueil d’EuuuhFrench AI pour les apprenants sinophones du français.', '面向中文母语法语学习者的 EuuuhFrench AI 首页界面。'],
+  ['blogPost.changedTitle', 'What changed in v1.0?', 'Qu’est-ce qui change dans la v1.0 ?', 'v1.0 有哪些变化？'],
+  ['blogPost.flow', 'The main focus was on making the practice flow more clearly and easily to follow. Learners now move through a simple sequence for each word or sentence: listen, record, receive feedback, retry or skip, then continue to the next item.', 'Le travail principal a porté sur un parcours d’entraînement plus clair et plus facile à suivre. Pour chaque mot ou phrase, les apprenants suivent maintenant une séquence simple : écouter, enregistrer, recevoir un feedback, réessayer ou passer, puis continuer.', '这次更新的重点是让练习流程更清晰、更容易跟随。现在，每个单词或句子的练习顺序更简单：听音频、录音、接收反馈、重试或跳过，然后继续下一项。'],
+  ['blogPost.mouthShape', 'Version 1.0 also includes local mouth-shape video guidance for five French sounds: /y/, /ø/, /œ/, /ʁ/, and /ɛ̃/. These sounds are especially relevant for Chinese-speaking learners of French because they involve lip rounding, vowel placement, nasal resonance, and uvular articulation. Video guidance is only available in Chinese for now.', 'La version 1.0 inclut aussi une aide vidéo locale sur la forme de la bouche pour cinq sons français : /y/, /ø/, /œ/, /ʁ/ et /ɛ̃/. Ces sons sont particulièrement importants pour les apprenants sinophones du français, car ils impliquent l’arrondissement des lèvres, le placement vocalique, la résonance nasale et l’articulation uvulaire. Pour l’instant, l’aide vidéo est disponible uniquement en chinois.', '1.0 版本还加入了五个法语音素的本地口型视频指导：/y/、/ø/、/œ/、/ʁ/ 和 /ɛ̃/。这些音对中文母语法语学习者尤其重要，因为它们涉及圆唇、元音位置、鼻化共鸣和小舌音发音。目前视频指导仅提供中文。'],
+  ['blogPost.mouthAlt', 'EuuuhFrench AI mouth-shape video guidance for French pronunciation practice.', 'Guidage vidéo de la forme de la bouche dans EuuuhFrench AI pour l’entraînement à la prononciation française.', 'EuuuhFrench AI 法语发音练习中的口型视频指导。'],
+  ['blogPost.combines', 'The app now combines native French audio examples, learner recording replay, mouth-shape guidance, correction prompts, and API-backed pronunciation assessment. Feedback wording has also been refined so that unclear recordings receive useful guidance rather than misleading scores.', 'L’application combine maintenant des exemples audio en français natif, la réécoute de l’enregistrement de l’apprenant, des indications de forme de bouche, des consignes de correction et une évaluation de la prononciation soutenue par API. Le texte du feedback a aussi été ajusté afin que les enregistrements peu clairs reçoivent des conseils utiles plutôt que des scores trompeurs.', '现在，应用结合了法语母语音频示例、学习者录音回放、口型指导、纠正提示和 API 支持的发音评估。反馈文字也经过调整，让不清晰的录音获得更有用的建议，而不是产生误导性的分数。'],
+  ['blogPost.assessment', 'The assessment layer has been improved in terms of target detection and feedback reliability. This remains AI-assisted pronunciation feedback, not a claim of a proprietary AI model, and not a replacement for teaching.', 'La couche d’évaluation a été améliorée pour la détection des cibles et la fiabilité du feedback. Il s’agit toujours d’un feedback de prononciation assisté par l’IA, sans revendication de modèle propriétaire, et cela ne remplace pas l’enseignement.', '评估层在目标检测和反馈可靠性方面有所改进。这仍然是 AI 辅助发音反馈，并不代表自有专有 AI 模型，也不能替代教学。'],
+  ['blogPost.prototypeTitle', 'Prototype status', 'Statut du prototype', '原型状态'],
+  ['blogPost.prototype', 'EuuuhFrench AI v1.0 is the first working MVP. It is still an early version, but the core learning flow is now usable: native audio, recording, replay, pronunciation feedback, retry support, and video guidance for difficult sounds.', 'EuuuhFrench AI v1.0 est le premier MVP fonctionnel. Il s’agit encore d’une version précoce, mais le parcours principal est maintenant utilisable : audio natif, enregistrement, réécoute, feedback de prononciation, aide à la reprise et guidage vidéo pour les sons difficiles.', 'EuuuhFrench AI v1.0 是第一个可用的 MVP。它仍然是早期版本，但核心学习流程已经可以使用：母语音频、录音、回放、发音反馈、重试支持，以及针对难点音的口型视频指导。'],
+  ['blogPost.privacy', 'Because this is the first public MVP release, basic <a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">Terms of Use</a> pages have also been added. They explain how pronunciation audio may be processed by third-party APIs for feedback, and clarify that EuuuhFrench AI is an experimental learning tool.', 'Comme il s’agit de la première version MVP publique, des pages simples de <a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité</a> et de <a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">conditions d’utilisation</a> ont aussi été ajoutées. Elles expliquent comment l’audio de prononciation peut être traité par des API tierces pour produire un feedback, et précisent qu’EuuuhFrench AI est un outil d’apprentissage expérimental.', '因为这是第一个公开 MVP 版本，项目也加入了基本的<a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">隐私政策</a>和<a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">使用条款</a>页面。它们说明发音音频可能会通过第三方 API 处理以生成反馈，并明确 EuuuhFrench AI 是一个实验性学习工具。'],
+  ['blogPost.final', 'As of now, this project serves as a bridge between applied linguistics research and practical language education design: a focused pronunciation software for Chinese-speaking learners of French. Built around concrete French pronunciation learning problems.', 'Pour l’instant, ce projet fait le lien entre la recherche en linguistique appliquée et la conception concrète d’outils pour l’éducation aux langues : un logiciel de prononciation ciblé pour les apprenants sinophones du français, construit autour de problèmes réels de prononciation française.', '目前，这个项目连接应用语言学研究和实际语言教育设计：它是一个面向中文母语法语学习者的发音软件，围绕具体的法语发音学习问题构建。'],
+  ['blogPost.softwareButton', 'View SIFAKS Software', 'Voir SIFAKS Software', '查看 SIFAKS Software'],
+  ['blogPost.appButton', 'Open app preview', 'Ouvrir l’aperçu de l’app', '打开应用预览'],
   ['contact.kicker', 'Get in touch', 'Me contacter', '联系我'],
   ['contact.title', 'Contact Sifaks Ousmail', 'Contacter Sifaks Ousmail', '联系 Sifaks Ousmail'],
   ['contact.lead', 'I’m always happy to hear from anyone interested in language learning, AI, or education.', 'Je suis toujours heureux d’échanger avec toute personne intéressée par l’apprentissage des langues, l’IA ou l’éducation.', '如果你对语言学习、人工智能或教育感兴趣，我很欢迎你联系我。'],
@@ -430,6 +454,7 @@ const registerTranslatableElements = () => {
   document.querySelectorAll(safeCopySelector).forEach((element) => {
     if (
       element.dataset.i18n ||
+      element.dataset.i18nHtml ||
       element.closest('[data-no-translate]') ||
       element.closest('.language-switcher') ||
       !hasOnlySafeInlineChildren(element)
@@ -450,6 +475,13 @@ const applyLanguage = (language) => {
     const key = element.dataset.i18n;
     const value = translations[selectedLanguage][key] || translations.en[key];
     if (value) setElementText(element, value);
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach((element) => {
+    if (element.closest('[data-no-translate]')) return;
+    const key = element.dataset.i18nHtml;
+    const value = translations[selectedLanguage][key] || translations.en[key];
+    if (value) element.innerHTML = value;
   });
 
   document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
