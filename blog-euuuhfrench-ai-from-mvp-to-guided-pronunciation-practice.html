@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="A concise EuuuhFrench AI development recap by Sifaks Ousmail, covering the move from the first MVP to guided pronunciation practice with more sounds, progress, and contrast training.">
+  <meta property="og:title" content="EuuuhFrench AI — From MVP to Guided Pronunciation Practice">
+  <meta property="og:description" content="A short public recap of EuuuhFrench AI from v1.0 to v1.4: practice modes, nasal vowels, more audio-backed practice, and clearer learner progress.">
+  <meta property="og:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-v14-lessons.png">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-05-14">
+  <meta property="og:url" content="https://sifaks.com/blog-euuuhfrench-ai-from-mvp-to-guided-pronunciation-practice.html">
+  <meta property="og:site_name" content="Sifaks Ousmail">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EuuuhFrench AI — From MVP to Guided Pronunciation Practice">
+  <meta name="twitter:description" content="A short recap of how EuuuhFrench AI moved from a first MVP to a more guided pronunciation practice app.">
+  <meta name="twitter:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-v14-lessons.png">
+  <title>EuuuhFrench AI — From MVP to Guided Pronunciation Practice | Sifaks Ousmail</title>
+  <link rel="canonical" href="https://sifaks.com/blog-euuuhfrench-ai-from-mvp-to-guided-pronunciation-practice.html">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260514-v12-polish">
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" data-no-translate href="index.html">
+        <span class="brand-home-stack"><img class="brand-mark" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo"><span class="brand-home">Home</span></span>
+        <span class="brand-text-stack"><span>Sifaks Ousmail</span><span class="brand-domain">sifaks.com</span></span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="background.html">About</a>
+        <a class="nav-link active" href="blog.html" aria-current="page">Blog</a>
+        <div class="more-menu" id="moreMenu">
+          <button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="countryMenu">
+            More
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="2,4 6,8 10,4"/>
+            </svg>
+          </button>
+          <div class="dropdown" id="countryMenu" aria-label="Site menu">
+            <div class="drop-group mobile-main-links">
+              <p class="drop-group-title">Main links</p>
+              <a class="drop-item" href="index.html">Home</a>
+              <a class="drop-item" href="background.html">About</a>
+              <a class="drop-item" href="research.html">Research</a>
+              <a class="drop-item" href="projects.html">Projects</a>
+              <a class="drop-item" href="publications.html">Publications</a>
+              <a class="drop-item active" href="blog.html" aria-current="page">Blog</a>
+              <a class="drop-item" href="contact.html">Contact</a>
+            </div>
+            <div class="drop-group">
+              <p class="drop-group-title">More links</p>
+              <a class="drop-item desktop-drop-link" href="research.html">Research</a>
+              <a class="drop-item desktop-drop-link" href="projects.html">Projects</a>
+              <a class="drop-item desktop-drop-link" href="publications.html">Publications</a>
+              <a class="drop-item" href="china.html"><span class="flag" aria-hidden="true">🇨🇳</span> China</a>
+              <a class="drop-item" href="uk.html"><span class="flag" aria-hidden="true">🇬🇧</span> UK</a>
+              <a class="drop-item" href="france.html"><span class="flag" aria-hidden="true">🇫🇷</span> France</a>
+              <a class="software-drop-cta mobile-software-cta" href="software.html">
+                <span class="software-drop-main" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</span>
+                <span class="software-drop-sub" data-i18n="nav.softwareCtaSub">AI French pronunciation for Chinese speakers</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <article class="blog-post">
+        <header class="hero blog-post-hero">
+          <img class="hero-logo" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo">
+          <p class="kicker" data-i18n="blogRecap.kicker">SIFAKS Software</p>
+          <h1 data-i18n="blogRecap.title">EuuuhFrench AI — From MVP to Guided Pronunciation Practice</h1>
+          <p class="post-meta" data-i18n="blogRecap.date">Published: May 14, 2026</p>
+          <p class="lead" data-i18n="blogRecap.lead">A short recap of the first EuuuhFrench AI versions.</p>
+        </header>
+
+        <section class="section blog-article-section">
+          <div class="blog-article-body glass">
+            <p data-i18n="blogRecap.intro">EuuuhFrench AI has changed quickly, so this post groups the early updates instead of writing one note for every small version.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-today-practice.png" width="1440" height="840" alt="EuuuhFrench AI home screen with the Start today's practice button." data-i18n-attr="alt:blogRecap.todayAlt">
+            </figure>
+
+            <p data-i18n="blogRecap.v10">v1.0 was the first usable version. Learners could choose a difficult French sound, listen to native audio, record themselves, replay their attempt, and receive pronunciation feedback.</p>
+
+            <p data-i18n="blogRecap.v1112">v1.1 and v1.2 made practice less repetitive. The app added quick lessons, word practice, sentence practice, and more work on nasal vowels such as an/en, on, and in/ain.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-practice-modes.png" width="1440" height="840" alt="EuuuhFrench AI practice screen showing Quick Lesson, More practice, and Sentence Practice modes." data-i18n-attr="alt:blogRecap.practiceModesAlt">
+            </figure>
+
+            <p data-i18n="blogRecap.v1314">v1.3 and v1.4 made the practice flow deeper. There is more audio-backed practice for each main sound, clearer nasal help, and small contrast pairs such as deux / doux and vin / vent.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-lessons.png" width="1440" height="840" alt="EuuuhFrench AI lesson page showing core sounds and contrast practice sections." data-i18n-attr="alt:blogRecap.lessonsAlt">
+            </figure>
+
+            <p data-i18n="blogRecap.account">I also started adding progress and account foundations. I see that as support work: useful for returning to practice, but not the main story of the app yet.</p>
+
+            <p data-i18n="blogRecap.close">The direction is simple: short guided practice, real French audio, focused sounds, and feedback that helps learners notice what to try next. The app is still experimental and research-informed, not a replacement for teacher guidance.</p>
+
+            <section class="post-dev-notes" aria-labelledby="dev-notes-toggle-label">
+              <div class="post-dev-notes-toggle-wrap">
+                <button class="dev-notes-toggle" type="button" aria-expanded="false" aria-controls="developer-notes-panel">
+                  <span id="dev-notes-toggle-label" data-dev-notes-label data-i18n="blogPost.devNotesToggleClosed">View developer notes</span>
+                  <span class="scroll-arrow" aria-hidden="true">↓</span>
+                </button>
+              </div>
+
+              <div class="post-dev-notes-panel" id="developer-notes-panel" hidden>
+                <h2 data-i18n="blogRecap.devNotesTitle">Developer notes</h2>
+                <p data-i18n="blogRecap.devNotesSummary">The early work moved from one guided pronunciation loop to a more structured practice app with clearer routing, content, feedback, and progress states.</p>
+
+                <div class="dev-notes-group">
+                  <h3 data-i18n="blogRecap.devAreasTitle">Main areas touched:</h3>
+                  <ul class="dev-notes-list">
+                    <li data-i18n="blogRecap.devAreaRouting">practice-mode routing for quick, word, and sentence practice</li>
+                    <li data-i18n="blogRecap.devAreaContent">audio-backed lesson content for difficult French sounds</li>
+                    <li data-i18n="blogRecap.devAreaAudio">native audio mapping for examples and practice items</li>
+                    <li data-i18n="blogRecap.devAreaNasal">nasal vowel and contrast-practice content</li>
+                    <li data-i18n="blogRecap.devAreaFeedback">feedback flow for listening, recording, retrying, and reviewing</li>
+                    <li data-i18n="blogRecap.devAreaProgress">local progress state and dashboard polish</li>
+                    <li data-i18n="blogRecap.devAreaI18n">i18n strings for English, French, and Chinese</li>
+                    <li data-i18n="blogRecap.devAreaPwa">PWA polish, legal-page polish, and browser QA</li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3 data-i18n="blogRecap.devChecksTitle">Recent checks:</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li data-i18n="blogRecap.devCheckStatic">static JavaScript and sitemap checks</li>
+                    <li data-i18n="blogRecap.devCheckBrowser">desktop and mobile browser QA</li>
+                    <li data-i18n="blogRecap.devCheckLanguages">EN / FR / 中文 language-switching checks</li>
+                    <li data-i18n="blogRecap.devCheckToggle">developer-notes expand/collapse check</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <div class="post-link-panel">
+              <a class="btn btn-primary" href="software.html" data-i18n="blogPost.softwareButton">View SIFAKS Software</a>
+              <a class="btn btn-secondary" href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer" data-i18n="blogPost.appButton">Open app preview</a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <span>© 2026 Sifaks Ousmail</span>
+      <a class="footer-github-link" href="https://github.com/sifaksousmail" target="_blank" rel="noopener noreferrer" data-i18n-attr="aria-label:footer.githubAria" aria-label="Visit Sifaks Ousmail GitHub profile" data-no-translate></a>
+      <span>sifaks.com</span>
+    </footer>
+  </div>
+
+  <script src="script.js?v=20260514-v12-polish"></script>
+</body>
+</html>
