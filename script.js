@@ -665,13 +665,44 @@ const createSiteBackground = () => {
   background.className = 'site-background';
   background.setAttribute('aria-hidden', 'true');
 
+  const wrap = document.createElement('div');
+  wrap.className = 'site-background-parallax';
+
   for (let index = 0; index < 4; index += 1) {
     const blob = document.createElement('span');
     blob.className = 'site-aurora-blob';
-    background.appendChild(blob);
+    wrap.appendChild(blob);
   }
 
+  background.appendChild(wrap);
   document.body.prepend(background);
+
+  if (!motionQuery.matches) {
+    let scrollNormTarget = 0;
+    let scrollNorm = 0;
+    const tParallax0 = performance.now();
+    const syncScroll = () => {
+      const range = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      scrollNormTarget = window.scrollY / range;
+    };
+    window.addEventListener('scroll', syncScroll, { passive: true });
+    syncScroll();
+
+    const parallaxFrame = (now) => {
+      const layer = background.querySelector('.site-background-parallax');
+      if (layer) {
+        scrollNorm += (scrollNormTarget - scrollNorm) * 0.07;
+        const t = (now - tParallax0) / 1000;
+        const billowX = Math.sin(t * 0.088) * 28 + Math.sin(t * 0.029 + 1.1) * 42;
+        const billowY = Math.cos(t * 0.079) * 22 + Math.sin(t * 0.041 + 2.2) * 36;
+        const scrollX = scrollNorm * 58;
+        const scrollY = scrollNorm * 155;
+        layer.style.transform = `translate3d(${billowX + scrollX}px, ${billowY + scrollY}px, 0)`;
+      }
+      requestAnimationFrame(parallaxFrame);
+    };
+    requestAnimationFrame(parallaxFrame);
+  }
 };
 
 const createSiteCursorTube = () => {
@@ -762,7 +793,7 @@ const createSiteCursorTube = () => {
     let pixelRatio = 1;
 
     const resizeCanvas = () => {
-      pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      pixelRatio = Math.min(window.devicePixelRatio || 1, 3);
       canvas.width = Math.floor(window.innerWidth * pixelRatio);
       canvas.height = Math.floor(window.innerHeight * pixelRatio);
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
@@ -828,8 +859,8 @@ const createSiteCursorTube = () => {
       if (points.length > 1) {
         context.save();
         context.globalCompositeOperation = 'lighter';
-        context.shadowBlur = 5;
-        context.shadowColor = 'rgba(125, 211, 252, 0.12)';
+        context.shadowBlur = 12;
+        context.shadowColor = 'rgba(125, 211, 252, 0.18)';
         drawLayer(now, 13, 0.13, (a) => `rgba(76, 201, 255, ${a})`, (a) => `rgba(167, 139, 250, ${a})`);
         context.shadowBlur = 0;
         drawLayer(now, 5.2, 0.28, (a) => `rgba(125, 211, 252, ${a})`, (a) => `rgba(119, 141, 255, ${a})`);
@@ -1009,9 +1040,10 @@ const createShaderBackground = () => {
 
   const gl = canvas.getContext('webgl', {
     alpha: true,
-    antialias: false,
+    antialias: true,
     depth: false,
-    stencil: false
+    stencil: false,
+    powerPreference: 'high-performance'
   });
 
   if (!gl) {
@@ -1030,56 +1062,90 @@ const createShaderBackground = () => {
     precision highp float;
     uniform vec2 uResolution;
     uniform float uTime;
+    uniform float uScroll;
 
     float wave(float value) {
       return sin(value) * 0.5 + 0.5;
     }
 
-    float softLine(float position, float width, float axis) {
-      return smoothstep(width, 0.0, abs(axis - position));
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+    }
+
+    float ribbonVeil(float position, float width, float axis) {
+      float d = abs(axis - position);
+      return 1.0 - smoothstep(0.0, width, d);
+    }
+
+    float ribbonCore(float position, float sigma, float axis) {
+      float d = axis - position;
+      return exp(-(d * d) / max(sigma * sigma * 1.12, 1e-6));
     }
 
     void main() {
-      vec2 uv = gl_FragCoord.xy / uResolution.xy;
+      vec2 frag = gl_FragCoord.xy;
+      vec2 uv = frag / uResolution.xy;
       vec2 field = (uv - 0.5) * vec2(uResolution.x / uResolution.y, 1.0);
 
-      float vignette = smoothstep(1.08, 0.16, length(field));
-      float horizon = smoothstep(-0.72, -0.22, field.y) * smoothstep(0.78, 0.18, field.y);
-      vec3 blue = vec3(0.49, 0.83, 0.99);
-      vec3 cyan = vec3(0.36, 0.91, 0.95);
-      vec3 violet = vec3(0.65, 0.55, 0.98);
+      float scroll = clamp(uScroll, 0.0, 1.0);
+      float scrollPhase = scroll * 6.2831853;
+      float curtainBreath = sin(field.x * 1.05 + uTime * 0.052 + scrollPhase) * 0.034 * scroll;
+      float curtainShear = sin(field.x * 0.62 + uTime * 0.031) * 0.018 * scroll;
+      float fieldY = field.y + curtainBreath + curtainShear;
+
+      float vignette = smoothstep(1.1, 0.15, length(field));
+      float horizon = smoothstep(-0.72, -0.22, fieldY) * smoothstep(0.78, 0.17, fieldY);
+      vec3 blue = vec3(0.48, 0.87, 1.0);
+      vec3 cyan = vec3(0.38, 0.94, 0.99);
+      vec3 ice = vec3(0.94, 0.99, 1.0);
+      vec3 violet = vec3(0.66, 0.56, 0.99);
 
       vec3 color = vec3(0.0);
       float alpha = 0.0;
 
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 14; i++) {
         float index = float(i);
-        float base = -0.54 + index * 0.115;
-        float phase = index * 0.72;
-        float curve = base
-          + sin(field.x * (2.1 + index * 0.12) + uTime * (0.085 + index * 0.006) + phase) * 0.058
-          + sin(field.x * (5.1 - index * 0.08) - uTime * 0.052 + phase) * 0.018;
+        float base = -0.58 + index * 0.086;
+        float phase = index * 0.66 + scrollPhase * 0.35;
+        float slow = sin(uTime * 0.019 + index * 0.31) * 0.012 * (1.0 + scroll);
+        float curve = base + slow
+          + sin(field.x * (2.05 + index * 0.105) + uTime * (0.072 + index * 0.0048) + phase) * 0.058
+          + sin(field.x * (4.95 - index * 0.072) - uTime * 0.046 + phase * 1.05) * 0.019
+          + sin(field.x * (7.4 + index * 0.04) + uTime * 0.038 + phase * 0.7) * 0.0085
+          + sin(field.x * (13.2 + index * 0.055) + uTime * 0.027 + phase * 1.15) * 0.0038
+          + scroll * 0.11 * sin(field.x * 1.55 + scrollPhase + uTime * 0.04);
 
-        float veilWidth = 0.032 + wave(uTime * 0.12 + index) * 0.022;
-        float coreWidth = 0.0038 + wave(uTime * 0.18 + index * 1.6) * 0.0028;
-        float veil = softLine(curve, veilWidth, field.y) * (0.034 + index * 0.004);
-        float core = softLine(curve, coreWidth, field.y) * (0.152 + index * 0.004);
-        float ridge = softLine(curve + sin(field.x * 8.0 + phase) * 0.011, coreWidth * 0.42, field.y) * 0.072;
-        float sideLight = softLine(curve + 0.023, coreWidth * 1.45, field.y) * 0.036;
+        float veilW = 0.024 + wave(uTime * 0.11 + index) * 0.012;
+        float sigma = 0.00122 + wave(uTime * 0.175 + index * 1.55) * 0.00095;
 
-        vec3 bandColor = mix(cyan, violet, wave(index * 1.21 + uv.x * 2.1));
-        bandColor = mix(bandColor, blue, smoothstep(0.0, 0.85, uv.y) * 0.32);
+        float d = abs(fieldY - curve);
+        float veil = ribbonVeil(curve, veilW, fieldY) * (0.02 + index * 0.0025);
+        float core = ribbonCore(curve, sigma, fieldY);
+        float coreAmp = (0.24 + index * 0.011) * core;
+        float ridge = ribbonCore(curve + sin(field.x * 8.2 + phase) * 0.0088, sigma * 0.52, fieldY) * 0.12;
+        float micro = 0.045 * exp(-(d * d) / (sigma * sigma * 6.2))
+          * (0.5 + 0.5 * sin(field.x * 220.0 + uTime * 1.25 + index + scroll * 8.0));
 
-        float band = (veil + core + ridge + sideLight) * horizon;
+        float band = (veil * 0.52 + coreAmp + ridge + micro) * horizon;
+        vec3 bandColor = mix(cyan, violet, wave(index * 1.15 + uv.x * 2.05 + scroll * 0.4));
+        bandColor = mix(bandColor, blue, smoothstep(0.0, 0.88, uv.y) * 0.28);
+        bandColor = mix(bandColor, ice, clamp(core * 2.25, 0.0, 0.58));
+
         color += bandColor * band;
-        alpha += (veil * 0.54 + core + ridge + sideLight) * horizon;
+        alpha += (veil * 0.4 + coreAmp * 1.08 + ridge * 0.88 + micro * 0.62) * horizon;
       }
 
-      float upperArc = softLine(0.34 + sin(field.x * 2.8 + uTime * 0.05) * 0.04, 0.015, field.y) * 0.042;
-      float lowerArc = softLine(-0.36 + sin(field.x * 3.4 - uTime * 0.045) * 0.035, 0.012, field.y) * 0.031;
+      float upperArc = ribbonVeil(0.34 + sin(field.x * 2.75 + uTime * 0.048 + scrollPhase) * 0.038, 0.011, fieldY) * 0.036;
+      float lowerArc = ribbonVeil(-0.36 + sin(field.x * 3.35 - uTime * 0.042 + scrollPhase * 0.5) * 0.035, 0.0095, fieldY) * 0.026;
 
       color += mix(blue, violet, uv.x) * (upperArc + lowerArc) * vignette;
-      alpha = clamp((alpha + upperArc + lowerArc) * vignette, 0.0, 0.72);
+      alpha = clamp((alpha + upperArc + lowerArc) * vignette, 0.0, 0.76);
+
+      vec2 gcoord = floor(frag * 0.85);
+      float grain = hash(gcoord) - 0.5;
+      float grain2 = hash(gcoord + vec2(31.7, 17.2)) - 0.5;
+      color += vec3(grain * 0.007 + grain2 * 0.004);
+      alpha = clamp(alpha + grain * 0.0025, 0.0, 0.8);
 
       gl_FragColor = vec4(color * vignette, alpha);
     }
@@ -1130,12 +1196,15 @@ const createShaderBackground = () => {
   const positionLocation = gl.getAttribLocation(program, 'aPosition');
   const resolutionLocation = gl.getUniformLocation(program, 'uResolution');
   const timeLocation = gl.getUniformLocation(program, 'uTime');
+  const scrollLocation = gl.getUniformLocation(program, 'uScroll');
 
   let animationFrame = 0;
   let startTime = performance.now();
+  let scrollTarget = 0;
+  let scrollSmooth = 0;
 
   const resizeCanvas = () => {
-    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2.5);
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 4);
     const width = Math.floor(window.innerWidth * pixelRatio);
     const height = Math.floor(window.innerHeight * pixelRatio);
 
@@ -1148,15 +1217,22 @@ const createShaderBackground = () => {
 
   const render = (now) => {
     resizeCanvas();
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    scrollTarget = window.scrollY / maxScroll;
+    scrollSmooth += (scrollTarget - scrollSmooth) * 0.06;
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.useProgram(program);
     gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
     gl.uniform1f(timeLocation, (now - startTime) / 1000);
+    if (scrollLocation !== null) gl.uniform1f(scrollLocation, scrollSmooth);
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.enableVertexAttribArray(positionLocation);
     gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    const px = scrollSmooth * 36;
+    const py = scrollSmooth * 88;
+    canvas.style.transform = `translate3d(${px}px, ${py}px, 0)`;
     animationFrame = requestAnimationFrame(render);
   };
 
